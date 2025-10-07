@@ -1,4 +1,10 @@
 body{
-    background-color: rgb(129, 235, 158);
-    text-decoration-color: black;
+    background-color: rgb(242, 230, 178);
+    text-decoration-color: rgb(234, 119, 4);
+}
+.ascii-art {
+    color: #ff8400; /* Red color using hex code */
+    font-family: "Lucida Console", Monaco, monospace; /* Recommended for ASCII art */
+    font-size: 16px;
+    line-height: 1; /* Adjust as needed to prevent extra spacing */
 }
