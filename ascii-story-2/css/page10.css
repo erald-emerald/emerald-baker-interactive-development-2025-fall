@@ -1,0 +1,117 @@
+body {
+  background: black;
+  color: #f5f5f5;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.vhs-frame {
+  margin: 50px auto;
+  padding: 50px;
+  max-width: 800px;
+  border: 2px solid #fff;
+  box-shadow: 0 0 25px #fff, 0 0 50px #900;
+  background: rgba(0,0,0,0.85);
+  position: relative;
+}
+
+h1 {
+  font-size: 2.8em;
+  text-shadow: 0 0 15px #fff, 0 0 30px #900;
+  margin-bottom: 25px;
+}
+
+.story {
+  font-size: 1.4em;
+  line-height: 1.8;
+  text-shadow: 0 0 8px #fff, 0 0 15px #900;
+  margin-bottom: 20px;
+}
+
+/* Whisper overlay */
+.whispers {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.whisper {
+  position: absolute;
+  font-size: 1.5em;
+  color: #0f0;
+  opacity: 0;
+  animation: whisperAnim 4s infinite;
+  text-shadow: 0 0 5px #0f0, 0 0 15px #0a0;
+}
+
+.whisper:nth-child(2) { animation-delay: 1s; }
+.whisper:nth-child(3) { animation-delay: 2s; }
+.whisper:nth-child(4) { animation-delay: 3s; }
+.whisper:nth-child(5) { animation-delay: 1.5s; }
+.whisper:nth-child(6) { animation-delay: 1.7s; }
+.whisper:nth-child(7) { animation-delay: 4s; }
+.whisper:nth-child(8) { animation-delay: 2.5s; }
+
+@keyframes whisperAnim {
+  0%, 100% { opacity: 0; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-5px); }
+}
+
+.drawing {
+  margin: 20px 0;
+  color: #ff0000;
+  font-size: 0.8em;
+  text-shadow: 0 0 6px #d7a0a0;
+  white-space: pre;
+}
+
+.choices {
+  margin-top: 30px;
+  position: relative;
+  z-index: 2; /* Make sure choices are above whispers */
+}
+
+.choice {
+  display: inline-block;
+  margin: 10px;
+  padding: 14px 28px;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.choice:hover {
+  background: #fff;
+  color: black;
+  box-shadow: 0 0 25px #fff, 0 0 50px #f55;
+}
+
+/* VHS Timestamp overlay */
+.vhs-timestamp {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #f00;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  text-shadow: 0 0 3px #f55, 0 0 6px #900;
+  animation: flicker 1.5s infinite;
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 50%, 60%, 100% {
+    opacity: 1;
+  }
+  20%, 51%, 61% {
+    opacity: 0.3;
+  }
+}

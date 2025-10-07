@@ -1,0 +1,97 @@
+body {
+  background: black;
+  color: #f5f5f5;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.vhs-frame {
+  margin: 50px auto;
+  padding: 50px;
+  max-width: 800px;
+  border: 2px solid #fff;
+  box-shadow: 0 0 25px #fff, 0 0 50px #ff00ff;
+  background: rgba(0,0,0,0.85);
+  position: relative;
+}
+
+h1 {
+  font-size: 3em;
+  text-shadow: 0 0 15px #fff, 0 0 30px #ff00ff;
+  margin-bottom: 25px;
+}
+
+.story {
+  font-size: 1.6em;
+  line-height: 1.8;
+  text-shadow: 0 0 8px #fff, 0 0 20px #ff00ff;
+  margin-bottom: 20px;
+}
+
+.happy {
+  color: #0f0;
+  font-weight: bold;
+  text-shadow: 0 0 10px #0f0, 0 0 25px #0a0;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 5px #0f0, 0 0 10px #0a0; }
+  50% { text-shadow: 0 0 15px #0f0, 0 0 30px #0a0; }
+  100% { text-shadow: 0 0 5px #0f0, 0 0 10px #0a0; }
+}
+
+.drawing {
+  margin: 25px 0;
+  font-size: 1em;
+  color: #fff;
+  text-shadow: 0 0 10px #ff00ff, 0 0 25px #ff88ff;
+  white-space: pre;
+}
+
+.caption {
+  font-size: 0.9em;
+  color: #ccc;
+  margin-top: 5px;
+}
+
+.choices {
+  margin-top: 30px;
+}
+
+.choice {
+  display: inline-block;
+  margin: 10px;
+  padding: 14px 28px;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.choice:hover {
+  background: #fff;
+  color: black;
+  box-shadow: 0 0 25px #fff, 0 0 50px #ff00ff;
+}
+
+/* VHS Timestamp overlay */
+.vhs-timestamp {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #f00;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  text-shadow: 0 0 3px #f55, 0 0 6px #900;
+  animation: flicker 1.5s infinite;
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 50%, 60%, 100% { opacity: 1; }
+  20%, 51%, 61% { opacity: 0.3; }
+}

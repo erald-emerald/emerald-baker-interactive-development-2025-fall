@@ -1,0 +1,104 @@
+body {
+  background: black;
+  color: #ff6666;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  animation: backgroundFlicker 4s infinite;
+}
+
+.vhs-frame {
+  margin: 50px auto;
+  padding: 50px;
+  max-width: 800px;
+  border: 2px solid #ff6666;
+  box-shadow: 0 0 25px #ff6666, 0 0 50px #990000;
+  background: rgba(0,0,0,0.85);
+  position: relative;
+}
+
+h1 {
+  font-size: 3em;
+  text-shadow: 0 0 15px #ff6666, 0 0 30px #990000;
+  margin-bottom: 25px;
+}
+
+.story {
+  font-size: 1.6em;
+  line-height: 1.8;
+  text-shadow: 0 0 8px #ff6666, 0 0 20px #990000;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #ff3333;
+  font-weight: bold;
+  text-shadow: 0 0 10px #ff3333, 0 0 25px #990000;
+  animation: glowHighlight 2s infinite alternate;
+}
+
+@keyframes glowHighlight {
+  0% { text-shadow: 0 0 5px #ff3333, 0 0 15px #990000; }
+  50% { text-shadow: 0 0 15px #ff3333, 0 0 30px #990000; }
+  100% { text-shadow: 0 0 5px #ff3333, 0 0 15px #990000; }
+}
+
+.drawing {
+  margin: 25px 0;
+  font-size: 1em;
+  color: #ff6666;
+  text-shadow: 0 0 10px #ff6666, 0 0 25px #990000;
+  white-space: pre;
+}
+
+.caption {
+  font-size: 0.9em;
+  color: #ff9999;
+  margin-top: 5px;
+}
+
+.choices {
+  margin-top: 30px;
+}
+
+.choice {
+  display: inline-block;
+  margin: 10px;
+  padding: 14px 28px;
+  border: 2px solid #ff6666;
+  color: #ff6666;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.choice:hover {
+  background: #ff6666;
+  color: black;
+  box-shadow: 0 0 25px #ff6666, 0 0 50px #990000;
+}
+
+/* VHS Timestamp overlay */
+.vhs-timestamp {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #ff4444;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  text-shadow: 0 0 3px #ff4444, 0 0 6px #990000;
+  animation: flicker 1.5s infinite;
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 50%, 60%, 100% { opacity: 1; }
+  20%, 51%, 61% { opacity: 0.3; }
+}
+
+/* Background lightning-like flicker */
+@keyframes backgroundFlicker {
+  0%, 90%, 100% { background-color: black; }
+  5%, 25%, 45%, 65%, 85% { background-color: #330000; }
+}

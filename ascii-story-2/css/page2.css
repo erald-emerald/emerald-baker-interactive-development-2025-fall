@@ -1,0 +1,87 @@
+body {
+  background: black;
+  color: #f5f5f5;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.vhs-frame {
+  margin: 50px auto;
+  padding: 40px;
+  max-width: 800px;
+  border: 2px solid #fff;
+  box-shadow: 0 0 15px #fff, 0 0 35px #aaa;
+  background: rgba(0,0,0,0.85);
+  position: relative;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-shadow: 0 0 10px #fff, 0 0 20px #999;
+  margin-bottom: 20px;
+}
+
+.story {
+  font-size: 1.2em;
+  line-height: 1.6;
+  text-shadow: 0 0 4px #ccc;
+}
+
+.drawing {
+  margin: 25px 0;
+  font-size: 0.8em;
+  color: #fff;
+  text-shadow: 0 0 6px #bbb;
+  white-space: pre;
+}
+
+.caption {
+  font-size: 0.9em;
+  color: #ccc;
+  margin-top: 5px;
+}
+
+.choices {
+  margin-top: 30px;
+}
+
+.choice {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 24px;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.choice:hover {
+  background: #fff;
+  color: black;
+  box-shadow: 0 0 20px #fff, 0 0 40px #f0f;
+}
+
+/* VHS Timestamp overlay */
+.vhs-timestamp {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #f00;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  text-shadow: 0 0 3px #f55, 0 0 6px #900;
+  animation: flicker 1.5s infinite;
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 50%, 60%, 100% {
+    opacity: 1;
+  }
+  20%, 51%, 61% {
+    opacity: 0.3;
+  }
+}

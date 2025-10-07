@@ -1,0 +1,147 @@
+/* page20.css — green + red ominous VHS ending */
+
+body {
+  background: #000;
+  color: #bfffbf; /* pale green */
+  font-family: "Courier New", monospace;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.vhs-frame {
+  position: relative;
+  max-width: 880px;
+  margin: 48px auto;
+  padding: 48px;
+  border: 2px solid #66ff66;
+  background: rgba(0, 0, 0, 0.88);
+  box-shadow: 0 0 30px #33cc33, 0 0 70px rgba(153,0,0,0.25);
+}
+
+/* Title */
+h1 {
+  font-size: 2.6rem;
+  margin: 0 0 18px 0;
+  color: #e6ffe6;
+  text-shadow:
+    0 0 8px #66ff66,
+    0 0 18px rgba(255, 50, 50, 0.9); /* hint of red */
+  letter-spacing: 1px;
+}
+
+/* story text */
+.story {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  margin: 14px auto;
+  max-width: 760px;
+  color: #dfffe0;
+  text-shadow: 0 0 6px rgba(0,0,0,0.6);
+}
+
+/* ascii drawing */
+.drawing {
+  margin: 26px auto;
+  max-width: 720px;
+  color: #bfffbf;
+  text-shadow: 0 0 10px #66ff66;
+  white-space: pre;
+  font-size: 0.95rem;
+  line-height: 1.05rem;
+}
+
+.caption {
+  margin-top: 6px;
+  color: #cfe;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* THE END styling with ominous red pulse */
+.the-end {
+  margin: 22px 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #ffdddd;
+  text-shadow:
+    0 0 6px #ff6666,
+    0 0 18px rgba(255,50,50,0.9);
+  animation: redPulse 2.2s infinite ease-in-out;
+}
+
+/* Choices */
+.choices {
+  margin-top: 24px;
+}
+
+.choice {
+  display: inline-block;
+  padding: 12px 26px;
+  margin: 8px;
+  border: 2px solid #66ff66;
+  color: #eaffea;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 220ms ease;
+  box-shadow: 0 0 10px #66ff66;
+  background: rgba(0,0,0,0.3);
+}
+
+.choice:hover {
+  background: #ff6666;
+  color: #000;
+  box-shadow: 0 0 18px #ff6666, 0 0 48px rgba(255,50,50,0.6);
+  border-color: #ff6666;
+}
+
+/* VHS timestamp overlay */
+.vhs-timestamp {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: #ff4444;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  text-shadow: 0 0 4px #ff6666, 0 0 8px #660000;
+  animation: flicker 1.6s infinite;
+}
+
+/* subtle scanlines overlay (VHS feel) */
+.vhs-frame::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.02) 0px,
+    rgba(0,0,0,0.12) 2px,
+    rgba(0,0,0,0) 3px
+  );
+  mix-blend-mode: overlay;
+  opacity: 0.9;
+}
+
+/* animations */
+@keyframes flicker {
+  0%, 19%, 21%, 50%, 60%, 100% { opacity: 1; }
+  20%, 51%, 61% { opacity: 0.25; }
+}
+
+@keyframes redPulse {
+  0%   { text-shadow: 0 0 6px #ff6666, 0 0 18px rgba(255,50,50,0.9); transform: scale(1); }
+  50%  { text-shadow: 0 0 12px #ff3333, 0 0 30px rgba(255,0,0,0.95); transform: scale(1.02); }
+  100% { text-shadow: 0 0 6px #ff6666, 0 0 18px rgba(255,50,50,0.9); transform: scale(1); }
+}
+
+/* small responsive tweaks */
+@media (max-width: 520px) {
+  .vhs-frame { padding: 28px; margin: 20px; }
+  h1 { font-size: 1.8rem; }
+  .story { font-size: 1rem; }
+  .the-end { font-size: 1.2rem; }
+  .choice { padding: 10px 14px; font-size: 0.9rem; }
+}
