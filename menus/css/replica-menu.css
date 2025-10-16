@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.menu-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px 50px;
+    border-top: 3px solid #000;
+    border-bottom: 3px solid #000;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Watermark Badge */
+.watermark-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    opacity: 0.03;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.watermark-badge img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Ensure content is above watermark */
+.menu-header,
+.menu-content,
+.menu-footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* Header Styles */
+.menu-header {
+    text-align: center;
+    border-bottom: 3px solid #000;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.address {
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.main-logo {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 15px;
+}
+
+.main-logo svg {
+    width: 100%;
+    height: auto;
+}
+
+.hours {
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 3px solid #000;
+    font-weight: 500;
+}
+
+/* Menu Content Layout */
+.menu-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* Section Styles */
+.menu-section {
+    margin-bottom: 25px;
+}
+
+.section-header {
+    background-color: #1a1a4d;
+    color: white;
+    padding: 8px 15px;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottle-note {
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.section-header .price {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.section-description {
+    font-size: 11px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Price Table */
+.price-table {
+    width: 100%;
+    margin: 15px 0;
+    font-size: 13px;
+}
+
+.price-table thead th {
+    text-align: right;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 5px 8px;
+    letter-spacing: 0.5px;
+}
+
+.price-table thead th:first-child {
+    text-align: left;
+}
+
+.price-table tbody td {
+    padding: 6px 8px;
+    text-align: right;
+    font-weight: 500;
+}
+
+.price-table tbody td.item-name {
+    text-align: left;
+    font-weight: 600;
+}
+
+.single-item {
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+/* Sandwich Section */
+.sandwich-item {
+    font-size: 13px;
+    font-weight: 600;
+    margin: 8px 0;
+}
+
+.sandwich-item.special {
+    margin-top: 12px;
+}
+
+.sub-description {
+    font-size: 11px;
+    font-weight: 400;
+    margin-left: 20px;
+    margin-top: 2px;
+    color: #333;
+}
+
+/* Potato Section */
+.potato-option {
+    font-size: 12px;
+    margin: 6px 0;
+    margin-left: 20px;
+}
+
+/* Sides Section */
+.side-list {
+    font-size: 13px;
+}
+
+.side-item {
+    margin: 8px 0;
+    font-weight: 500;
+}
+
+.side-list .sub-description {
+    margin-left: 20px;
+    margin-top: 2px;
+    margin-bottom: 8px;
+}
+
+/* Footer */
+.menu-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 3px solid #000;
+    text-align: center;
+}
+
+.website {
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .menu-container {
+        padding: 30px 25px;
+    }
+    
+    .main-logo {
+        max-width: 300px;
+    }
+    
+    .watermark-badge {
+        width: 350px;
+        height: 350px;
+    }
+}

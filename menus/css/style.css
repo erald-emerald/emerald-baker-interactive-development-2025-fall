@@ -1,0 +1,225 @@
+/* HEROES' HIDEOUT - FULL COMIC BOOK STYLE (speech-bubble fixes + improved animation) */
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Comic Neue', cursive;
+  background-color: #fefaf1;
+  background-image: radial-gradient(#d2c7b0 1px, transparent 1px),
+                    radial-gradient(#f0a7a2 1px, transparent 1px);
+  background-position: 0 0, 5px 5px;
+  background-size: 10px 10px;
+  color: #111;
+}
+
+/* HEADER */
+.header {
+  background: #e63946;
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  border-bottom: 6px solid #000;
+  box-shadow: 0 10px 0 #000;
+}
+
+.title {
+  font-family: 'Bangers', cursive;
+  color: #fff;
+  font-size: 4rem;
+  letter-spacing: 2px;
+  margin: 0;
+  text-shadow: 3px 3px 0 #000;
+}
+
+.tagline {
+  font-family: 'Comic Neue', cursive;
+  color: #fffce6;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 2px 2px #000;
+  margin-top: 0.25rem;
+}
+
+/* MENU LAYOUT */
+.menu {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+/* SECTION TITLES */
+.section-title {
+  font-family: 'Bangers', cursive;
+  font-size: 2.5rem;
+  color: #1e3a8a;
+  text-shadow: 2px 2px #fff, 3px 3px #000;
+  display: inline-block;
+  border: 4px solid #000;
+  padding: 0.4rem 1rem;
+  background: #f9d45c;
+  box-shadow: 6px 6px 0 #000;
+  transform: rotate(-2deg);
+  position: relative;
+}
+
+/* MENU CARDS GRID */
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+/* MENU CARD (comic panel) */
+.menu-card {
+  position: relative;
+  background: #fffdfa;
+  border: 5px solid #000;
+  border-radius: 10px;
+  box-shadow: 8px 8px 0 #000;
+  padding: 1rem;
+  transform: scale(0.95) rotate(-1deg);
+  opacity: 0;
+  animation: panelPop 0.8s ease forwards;
+  overflow: visible;           /* ensure bubbles aren't clipped */
+  z-index: 0;
+}
+
+.menu-card:nth-child(even) { transform: rotate(1deg) scale(0.95); }
+
+@keyframes panelPop {
+  0% { opacity: 0; transform: translateY(40px) scale(0.9) rotate(-2deg); }
+  70% { opacity: 1; transform: translateY(-5px) scale(1.05) rotate(1deg); }
+  100% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
+}
+
+/* IMAGE */
+.food-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border: 3px solid #000;
+  border-radius: 6px;
+  margin-bottom: 0.8rem;
+}
+
+/* TEXT STYLES */
+.menu-card h3 {
+  font-family: 'Bangers', cursive;
+  font-size: 1.5rem;
+  color: #e23636;
+  text-shadow: 2px 2px #fff, 2px 2px #000;
+  margin-bottom: 0.4rem;
+}
+
+.menu-card p {
+  color: #111;
+  line-height: 1.5;
+  font-size: 1rem;
+  margin: 0.25rem 0 0.6rem;
+}
+
+.price {
+  background: #f9d45c;
+  border: 3px solid #000;
+  padding: 0.3rem 0.7rem;
+  font-weight: bold;
+  box-shadow: 3px 3px 0 #000;
+  display: inline-block;
+  margin-top: 0.4rem;
+}
+
+/* -----------------------------
+   SPEECH BUBBLE: FIXED & ANIMATED
+   ----------------------------- */
+/* bubble base */
+.speech-bubble {
+  position: absolute;
+  top: -18px;
+  right: -14px;
+  z-index: 20;                  /* above the card */
+  background: #fff;
+  border: 3px solid #000;
+  font-family: 'Bangers', cursive;
+  font-size: 0.92rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 10px;
+  color: #000;
+  box-shadow: 4px 4px 0 #000;
+  transform-origin: 50% 100%;
+  pointer-events: none;         /* don't block clicks */
+  /* start hidden and slightly above & small */
+  opacity: 0;
+  transform: translateY(-8px) scale(0.6) rotate(-8deg);
+  transition: transform 280ms cubic-bezier(.2,.8,.2,1), opacity 220ms ease;
+}
+
+/* the little tail */
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 12px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 8px 0 8px;
+  border-color: #fff transparent transparent transparent;
+  transform: rotate(18deg);
+  transition: transform 280ms cubic-bezier(.2,.8,.2,1);
+  filter: drop-shadow(1px 1px 0 #000);
+}
+
+/* bubble visible on hover with a pop+float animation */
+.menu-card:hover .speech-bubble,
+.menu-card:focus-within .speech-bubble {
+  opacity: 1;
+  transform: translateY(-2px) scale(1) rotate(-4deg);
+  animation: bubbleFloat 1.4s ease-in-out infinite;
+}
+
+/* gentle floating keyframes */
+@keyframes bubbleFloat {
+  0% { transform: translateY(-2px) scale(1) rotate(-4deg); }
+  50% { transform: translateY(-6px) scale(1.03) rotate(-2deg); }
+  100% { transform: translateY(-2px) scale(1) rotate(-4deg); }
+}
+
+/* Small bounce when the bubble first appears */
+.menu-card:hover .speech-bubble {
+  animation: bubblePop 420ms cubic-bezier(.2,.8,.2,1), bubbleFloat 1.4s 0.42s ease-in-out infinite;
+}
+
+@keyframes bubblePop {
+  0%   { opacity: 0; transform: translateY(-8px) scale(0.6) rotate(-8deg); }
+  60%  { opacity: 1; transform: translateY(0px) scale(1.08) rotate(0deg); }
+  100% { opacity: 1; transform: translateY(-2px) scale(1) rotate(-4deg); }
+}
+
+/* ensure tail rotates smoothly as bubble appears */
+.menu-card:hover .speech-bubble::after {
+  transform: rotate(8deg);
+}
+
+/* prefer-reduced-motion: disable fancy animation but keep visibility */
+@media (prefers-reduced-motion: reduce) {
+  .menu-card, .speech-bubble {
+    animation: none !important;
+    transition: none !important;
+  }
+  .speech-bubble {
+    opacity: 1;
+    transform: translateY(-2px) scale(1) rotate(0deg);
+  }
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  background: #1e3a8a;
+  color: #fffbe6;
+  padding: 2rem;
+  border-top: 6px solid #000;
+  box-shadow: 0 -8px 0 #000;
+  font-family: 'Bangers', cursive;
+}
