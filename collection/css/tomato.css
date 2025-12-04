@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Georgia', serif;
+  color: #3c2a21;
+  background: linear-gradient(160deg, #fddbb4, #fff7e6, #fce3d1);
+  background-size: 400% 400%;
+  animation: warmBreeze 25s ease infinite;
+}
+
+@keyframes warmBreeze {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating pollen particles */
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* Tomato vines background layer */
+.tomato-vines::before, .tomato-vines::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 40%, rgba(255,99,71,0.08), transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(60,179,113,0.08), transparent 60%);
+  animation: drift 60s linear infinite;
+  mix-blend-mode: multiply;
+}
+
+@keyframes drift {
+  0% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(-5%, -5%) rotate(180deg); }
+  100% { transform: translate(0,0) rotate(360deg); }
+}
+
+/* Story text */
+.story-container {
+  position: relative;
+  z-index: 2;
+  width: 60%;
+  max-width: 700px;
+  margin: 10% auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #b3392e;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+#story {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  opacity: 0.9;
+}
+
+/* Animated floating tomatoes */
+.tomato {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle at 30% 30%, #ff6347, #c72f24);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255,99,71,0.4);
+  animation: sway 6s ease-in-out infinite alternate;
+  z-index: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.tomato:hover {
+  transform: scale(1.3) rotate(10deg);
+}
+
+@keyframes sway {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-20px) rotate(3deg); }
+}
+
+/* Back home link */
+.back-home {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  font-size: 1.1rem;
+  color: #a93226;
+  text-decoration: none;
+  font-weight: bold;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  z-index: 3;
+}
+
+.back-home:hover {
+  opacity: 1;
+  transform: translateX(-3px);
+}

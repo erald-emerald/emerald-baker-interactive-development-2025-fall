@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Georgia', serif;
+  background: radial-gradient(
+      circle at 30% 20%,
+      rgba(255,255,255,0.6),
+      rgba(179,220,255,0.3) 40%,
+      rgba(140,178,220,0.4),
+      #6ca0d0 90%
+  );
+  animation: auroraShift 40s ease-in-out infinite alternate;
+  color: #475548;
+}
+
+/* Floating aurora effect */
+@keyframes auroraShift {
+  0% { filter: hue-rotate(0deg) brightness(1); }
+  50% { filter: hue-rotate(60deg) brightness(1.2); }
+  100% { filter: hue-rotate(120deg) brightness(1); }
+}
+
+/* Canvas particle sky */
+#sky {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Story text container */
+.story-container {
+  position: relative;
+  z-index: 3;
+  width: 65%;
+  max-width: 750px;
+  margin: 12% auto;
+  text-align: center;
+  animation: floatUp 4s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@keyframes floatUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  font-size: 2.8rem;
+  letter-spacing: 2px;
+  color: #2d3d32;
+  text-shadow: 0 0 12px rgba(255,255,255,0.7);
+  margin-bottom: 2.2rem;
+}
+
+/* Story lines appear inside glowing drifting bubbles */
+#story p {
+  position: relative;
+  font-size: 1.3rem;
+  padding: 15px 30px;
+  margin: 1.5rem auto;
+  width: fit-content;
+  max-width: 90%;
+  border-radius: 40px;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 18px rgba(255,255,255,0.3);
+  animation: drift 10s infinite ease-in-out alternate;
+}
+
+@keyframes drift {
+  0% { transform: translateY(0px) translateX(0px); }
+  100% { transform: translateY(-20px) translateX(15px); }
+}
+
+/* Dandelion */
+.dandelion {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  cursor: pointer;
+  animation: plantFloat 6s ease-in-out infinite alternate;
+}
+
+@keyframes plantFloat {
+  0% { transform: translateX(-50%) translateY(0); }
+  100% { transform: translateX(-50%) translateY(-10px); }
+}
+
+.stem {
+  width: 7px;
+  height: 160px;
+  background: linear-gradient(to top, #4c7a4d, #8cc78f);
+  border-radius: 3px;
+}
+
+.head {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #ffffff, #e6f5f0 60%, #b5cfc0);
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(255,255,255,0.9);
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+.head:hover {
+  transform: scale(1.08) rotate(2deg);
+}
+
+/* Seeds become floating glowing WORDS */
+.word-seed {
+  position: absolute;
+  font-size: 1rem;
+  padding: 6px 10px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 20px;
+  box-shadow: 0 0 15px white;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+/* Back link */
+.back-home {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(0,0,0,0.5);
+  font-weight: 600;
+  z-index: 5;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.back-home:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
