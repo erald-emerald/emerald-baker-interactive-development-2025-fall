@@ -1,4 +1,4 @@
-/* HEROES' HIDEOUT - FULL COMIC BOOK STYLE (speech-bubble fixes + improved animation) */
+
 
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap');
 
@@ -13,7 +13,7 @@ body {
   color: #111;
 }
 
-/* HEADER */
+
 .header {
   background: #e63946;
   text-align: center;
@@ -40,14 +40,14 @@ body {
   margin-top: 0.25rem;
 }
 
-/* MENU LAYOUT */
+
 .menu {
   max-width: 1100px;
   margin: 3rem auto;
   padding: 0 1.5rem;
 }
 
-/* SECTION TITLES */
+
 .section-title {
   font-family: 'Bangers', cursive;
   font-size: 2.5rem;
@@ -62,7 +62,7 @@ body {
   position: relative;
 }
 
-/* MENU CARDS GRID */
+
 .menu-items {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -70,7 +70,7 @@ body {
   margin-top: 1.5rem;
 }
 
-/* MENU CARD (comic panel) */
+
 .menu-card {
   position: relative;
   background: #fffdfa;
@@ -81,7 +81,7 @@ body {
   transform: scale(0.95) rotate(-1deg);
   opacity: 0;
   animation: panelPop 0.8s ease forwards;
-  overflow: visible;           /* ensure bubbles aren't clipped */
+  overflow: visible;        
   z-index: 0;
 }
 
@@ -93,7 +93,7 @@ body {
   100% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
 }
 
-/* IMAGE */
+
 .food-image {
   width: 100%;
   height: 180px;
@@ -103,7 +103,6 @@ body {
   margin-bottom: 0.8rem;
 }
 
-/* TEXT STYLES */
 .menu-card h3 {
   font-family: 'Bangers', cursive;
   font-size: 1.5rem;
@@ -129,15 +128,13 @@ body {
   margin-top: 0.4rem;
 }
 
-/* -----------------------------
-   SPEECH BUBBLE: FIXED & ANIMATED
-   ----------------------------- */
-/* bubble base */
+
+
 .speech-bubble {
   position: absolute;
   top: -18px;
   right: -14px;
-  z-index: 20;                  /* above the card */
+  z-index: 20;              
   background: #fff;
   border: 3px solid #000;
   font-family: 'Bangers', cursive;
@@ -147,14 +144,13 @@ body {
   color: #000;
   box-shadow: 4px 4px 0 #000;
   transform-origin: 50% 100%;
-  pointer-events: none;         /* don't block clicks */
-  /* start hidden and slightly above & small */
+  pointer-events: none;      
   opacity: 0;
   transform: translateY(-8px) scale(0.6) rotate(-8deg);
   transition: transform 280ms cubic-bezier(.2,.8,.2,1), opacity 220ms ease;
 }
 
-/* the little tail */
+
 .speech-bubble::after {
   content: '';
   position: absolute;
@@ -170,7 +166,7 @@ body {
   filter: drop-shadow(1px 1px 0 #000);
 }
 
-/* bubble visible on hover with a pop+float animation */
+
 .menu-card:hover .speech-bubble,
 .menu-card:focus-within .speech-bubble {
   opacity: 1;
@@ -178,14 +174,14 @@ body {
   animation: bubbleFloat 1.4s ease-in-out infinite;
 }
 
-/* gentle floating keyframes */
+
 @keyframes bubbleFloat {
   0% { transform: translateY(-2px) scale(1) rotate(-4deg); }
   50% { transform: translateY(-6px) scale(1.03) rotate(-2deg); }
   100% { transform: translateY(-2px) scale(1) rotate(-4deg); }
 }
 
-/* Small bounce when the bubble first appears */
+
 .menu-card:hover .speech-bubble {
   animation: bubblePop 420ms cubic-bezier(.2,.8,.2,1), bubbleFloat 1.4s 0.42s ease-in-out infinite;
 }
@@ -196,12 +192,12 @@ body {
   100% { opacity: 1; transform: translateY(-2px) scale(1) rotate(-4deg); }
 }
 
-/* ensure tail rotates smoothly as bubble appears */
+
 .menu-card:hover .speech-bubble::after {
   transform: rotate(8deg);
 }
 
-/* prefer-reduced-motion: disable fancy animation but keep visibility */
+
 @media (prefers-reduced-motion: reduce) {
   .menu-card, .speech-bubble {
     animation: none !important;
@@ -213,7 +209,6 @@ body {
   }
 }
 
-/* FOOTER */
 footer {
   text-align: center;
   background: #1e3a8a;

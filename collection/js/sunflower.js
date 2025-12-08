@@ -1,6 +1,4 @@
-// ======================
-//  DUST PARTICLES
-// ======================
+
 const canvas = document.getElementById("dustCanvas");
 const ctx = canvas.getContext("2d");
 
@@ -41,9 +39,7 @@ function animateDust() {
 animateDust();
 
 
-// ======================
-//  FADE-IN POEM LINES
-// ======================
+
 const lines = document.querySelectorAll("#poem p");
 lines.forEach((line, i) => {
   setTimeout(() => {
@@ -52,9 +48,7 @@ lines.forEach((line, i) => {
 });
 
 
-// ======================
-//  AMBIENT AUDIO
-// ======================
+
 const crickets = document.getElementById("crickets");
 const hum = document.getElementById("nightHum");
 

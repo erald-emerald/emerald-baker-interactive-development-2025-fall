@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap');
 
-/* ===== Comic Book Look ===== */
+
 body {
   margin: 0;
   background-color: #f4f1ec;
@@ -10,7 +10,7 @@ body {
   background-size: 10px 10px;
 }
 
-/* ===== Header ===== */
+
 .hero-header {
   text-align: center;
   border-bottom: 5px solid #222;
@@ -33,7 +33,7 @@ body {
   font-weight: 700;
 }
 
-/* ===== Menu Panels ===== */
+
 .menu-container {
   display: flex;
   flex-direction: column;
@@ -72,7 +72,7 @@ strong {
   text-shadow: 1px 1px 0 #000;
 }
 
-/* ===== Speech Bubbles ===== */
+
 .speech-bubble {
   display: inline-block;
   background: #ffcc00;
@@ -98,7 +98,7 @@ strong {
   transform: rotate(-3deg);
 }
 
-/* ===== Images ===== */
+
 .image-row {
   display: flex;
   justify-content: center;
@@ -120,7 +120,7 @@ strong {
   transform: scale(1.05) rotate(-1.5deg);
 }
 
-/* ===== Footer ===== */
+
 .hero-footer {
   text-align: center;
   background: #fdf8ee;

@@ -21,7 +21,7 @@ body {
     overflow: hidden;
 }
 
-/* Watermark Badge */
+
 .watermark-badge {
     position: absolute;
     top: 50%;
@@ -40,7 +40,7 @@ body {
     object-fit: contain;
 }
 
-/* Ensure content is above watermark */
+
 .menu-header,
 .menu-content,
 .menu-footer {
@@ -48,7 +48,6 @@ body {
     z-index: 1;
 }
 
-/* Header Styles */
 .menu-header {
     text-align: center;
     border-bottom: 3px solid #000;
@@ -83,14 +82,14 @@ body {
     font-weight: 500;
 }
 
-/* Menu Content Layout */
+
 .menu-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
 }
 
-/* Section Styles */
+
 .menu-section {
     margin-bottom: 25px;
 }
@@ -126,7 +125,7 @@ body {
     color: #333;
 }
 
-/* Price Table */
+
 .price-table {
     width: 100%;
     margin: 15px 0;
@@ -162,7 +161,7 @@ body {
     margin-top: 15px;
 }
 
-/* Sandwich Section */
+
 .sandwich-item {
     font-size: 13px;
     font-weight: 600;
@@ -181,14 +180,14 @@ body {
     color: #333;
 }
 
-/* Potato Section */
+
 .potato-option {
     font-size: 12px;
     margin: 6px 0;
     margin-left: 20px;
 }
 
-/* Sides Section */
+
 .side-list {
     font-size: 13px;
 }
@@ -204,7 +203,7 @@ body {
     margin-bottom: 8px;
 }
 
-/* Footer */
+
 .menu-footer {
     margin-top: 40px;
     padding-top: 20px;
@@ -218,7 +217,7 @@ body {
     font-weight: 500;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .menu-content {
         grid-template-columns: 1fr;

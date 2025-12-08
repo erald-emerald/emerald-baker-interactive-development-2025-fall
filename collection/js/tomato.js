@@ -1,4 +1,4 @@
-// Floating pollen animation
+
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 let particles = [];
@@ -37,7 +37,7 @@ function drawParticles() {
 }
 drawParticles();
 
-// Typewriter story reveal
+
 const storyText = [
   "In the heat of late July, the tomatoes gleamed like secrets.",
   "I remember small hands brushing the vines, the green smell clinging to my skin.",
@@ -68,7 +68,7 @@ function revealLine() {
 
 setTimeout(revealLine, 1500);
 
-// Floating tomato creation + dragging
+
 function spawnTomatoes() {
   for (let i = 0; i < 6; i++) {
     const tomato = document.createElement('div');
@@ -77,7 +77,7 @@ function spawnTomatoes() {
     tomato.style.top = `${Math.random() * (window.innerHeight - 100)}px`;
     document.body.appendChild(tomato);
 
-    // gentle bounce when clicked
+   
     tomato.addEventListener('click', () => {
       tomato.animate(
         [
@@ -89,7 +89,7 @@ function spawnTomatoes() {
       );
     });
 
-    // make draggable
+    
     makeDraggable(tomato);
   }
 }
@@ -100,7 +100,7 @@ function makeDraggable(element) {
 
   element.addEventListener('mousedown', (e) => {
     isDragging = true;
-    element.style.animation = 'none'; // stop swaying while dragging
+    element.style.animation = 'none'; 
     offsetX = e.clientX - element.offsetLeft;
     offsetY = e.clientY - element.offsetTop;
     element.style.zIndex = 5;
@@ -117,14 +117,14 @@ function makeDraggable(element) {
     if (isDragging) {
       isDragging = false;
       element.style.zIndex = 1;
-      // restart sway animation after slight delay
+      
       setTimeout(() => {
         element.style.animation = 'sway 6s ease-in-out infinite alternate';
       }, 200);
     }
   });
 
-  // for touch devices
+
   element.addEventListener('touchstart', (e) => {
     isDragging = true;
     element.style.animation = 'none';

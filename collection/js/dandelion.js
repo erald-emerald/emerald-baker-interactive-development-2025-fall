@@ -1,6 +1,4 @@
-/* ──────────────────────────────────────────
-   Canvas Particle Sky (Abstract Glow Particles)
-────────────────────────────────────────── */
+
 
 const canvas = document.getElementById("sky");
 const ctx = canvas.getContext("2d");
@@ -13,7 +11,7 @@ function resize() {
 resize();
 window.addEventListener("resize", resize);
 
-// create particle field
+
 for (let i = 0; i < 80; i++) {
   particles.push({
     x: Math.random() * canvas.width,
@@ -39,7 +37,7 @@ function drawParticles() {
     p.x += p.dx;
     p.y += p.dy;
 
-    // wrap around
+    
     if (p.x > canvas.width) p.x = 0;
     if (p.x < 0) p.x = canvas.width;
     if (p.y > canvas.height) p.y = 0;
@@ -50,9 +48,7 @@ function drawParticles() {
 }
 drawParticles();
 
-/* ──────────────────────────────────────────
-   Story Reveal, Line-by-Line in Floating Bubbles
-────────────────────────────────────────── */
+
 
 const storyText = [
   "When I was small, I believed wishes rode the wind.",
@@ -83,9 +79,7 @@ function reveal() {
 }
 setTimeout(reveal, 2000);
 
-/* ──────────────────────────────────────────
-   Dandelion Blow Interaction: WORD-SEEDS
-────────────────────────────────────────── */
+
 
 const words = [
   "wish", "hope", "dream", "breathe", "wonder",
@@ -120,9 +114,7 @@ dandelion.addEventListener("click", () => {
   }
 });
 
-// ======================
-//  AMBIENT AUDIO
-// ======================
+
 const birds = document.getElementById("birds");
 
 

@@ -1,9 +1,9 @@
 const poemText = document.getElementById('poemText');
 let textVisible = false;
 
-// Toggle poetic text on background click
+
 document.body.addEventListener('click', (e) => {
-  if (e.target.closest('.symbol')) return; // ignore symbol clicks here
+  if (e.target.closest('.symbol')) return; 
 
   textVisible = !textVisible;
   poemText.style.opacity = textVisible ? '1' : '0';
@@ -11,7 +11,7 @@ document.body.addEventListener('click', (e) => {
     ? 'translate(-50%, -50%) scale(1)'
     : 'translate(-50%, -50%) scale(0.9)';
 
-  // Ripple animation
+  
   const ripple = document.createElement('span');
   ripple.classList.add('ripple');
   ripple.style.left = `${e.clientX}px`;
@@ -20,7 +20,7 @@ document.body.addEventListener('click', (e) => {
   setTimeout(() => ripple.remove(), 2000);
 });
 
-// Particle pollen background
+
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 let particles = [];
@@ -59,7 +59,7 @@ function drawParticles() {
 }
 drawParticles();
 
-// Bloom colors for each plant
+
 const bloomColors = {
   tomato: "#f85e4b",
   honeysuckle: "#ffb6c1",
@@ -68,13 +68,13 @@ const bloomColors = {
   deadnettle: "#c785e2"
 };
 
-// Add bloom when a plant link is clicked
+
 document.querySelectorAll('.symbol').forEach((symbol) => {
   symbol.addEventListener('click', (e) => {
-    e.preventDefault(); // prevent immediate navigation
+    e.preventDefault(); 
     const id = symbol.id;
     createBloom(bloomColors[id]);
-    // Navigate after short delay (for bloom animation)
+    
     setTimeout(() => {
       window.location.href = symbol.getAttribute('href');
     }, 800);

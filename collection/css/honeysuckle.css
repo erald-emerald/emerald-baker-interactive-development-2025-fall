@@ -6,14 +6,13 @@ body, html {
   font-family: 'Georgia', serif;
 }
 
-/* Container */
 #honeysuckle-container {
   position: relative;
   width: 100vw;
   height: 100vh;
 }
 
-/* Vines Canvas */
+
 #vineCanvas {
   position: absolute;
   top: 0;
@@ -23,7 +22,7 @@ body, html {
   pointer-events: none;
 }
 
-/* Floating text lines */
+
 .firefly-line {
   position: absolute;
   padding: 8px 14px;
@@ -40,7 +39,7 @@ body, html {
   transition: opacity 1.5s ease;
 }
 
-/* Honeygold particles */
+
 .particle {
   position: absolute;
   width: 6px;

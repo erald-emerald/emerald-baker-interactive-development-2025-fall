@@ -19,21 +19,20 @@ html, body {
   color: #475548;
 }
 
-/* Floating aurora effect */
+
 @keyframes auroraShift {
   0% { filter: hue-rotate(0deg) brightness(1); }
   50% { filter: hue-rotate(60deg) brightness(1.2); }
   100% { filter: hue-rotate(120deg) brightness(1); }
 }
 
-/* Canvas particle sky */
 #sky {
   position: fixed;
   inset: 0;
   z-index: 0;
 }
 
-/* Story text container */
+
 .story-container {
   position: relative;
   z-index: 3;
@@ -61,7 +60,7 @@ html, body {
   margin-bottom: 2.2rem;
 }
 
-/* Story lines appear inside glowing drifting bubbles */
+
 #story p {
   position: relative;
   font-size: 1.3rem;
@@ -81,7 +80,7 @@ html, body {
   100% { transform: translateY(-20px) translateX(15px); }
 }
 
-/* Dandelion */
+
 .dandelion {
   position: absolute;
   bottom: 70px;
@@ -118,7 +117,7 @@ html, body {
   transform: scale(1.08) rotate(2deg);
 }
 
-/* Seeds become floating glowing WORDS */
+
 .word-seed {
   position: absolute;
   font-size: 1rem;
@@ -130,7 +129,7 @@ html, body {
   pointer-events: none;
 }
 
-/* Back link */
+
 .back-home {
   position: fixed;
   bottom: 25px;
